@@ -1,8 +1,8 @@
 const Firebird = require("node-firebird");
 const options = require("../config/config.js");
+const novoCliente = require("../src/main.js");
 
 module.exports = executeQuery;
-module.exports = insertCliente;
 
 function executeQuery(query, callback) {
   Firebird.attach(options, function (err, db) {
@@ -18,8 +18,4 @@ function executeQuery(query, callback) {
       });
     });
   });
-}
-
-function insertCliente(query, callback) {
-  executeQuery(query, callback);
 }

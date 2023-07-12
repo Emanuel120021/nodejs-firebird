@@ -1,23 +1,33 @@
 const executeQuery = require("../queries/queries.js");
-const insertCliente = require("../queries/queries.js");
-const inserts = require("../data/inserts.js");
+const {
+  querySelect,
+  queryInsert,
+  queryDelete,
+} = require("../data/querySQL.js");
 
-const querySelect = "SELECT * FROM clientes";
-
-const queryInsert = `INSERT INTO  ${novoCliente.tabela} (${novoCliente.values.nome}, 
-                                    ${novoCliente.values.email}, 
-                                    ${novoCliente.values.telefone}) 
-
-                            VALUES ('${novoCliente.content.nome}', 
-                                    '${novoCliente.content.email}', 
-                                    '${novoCliente.content.telefone}')`;
-
-executeQuery(querySelect, (result) => {
-  result.forEach((row) => {
-    console.log(row);
+function listQuery() {
+  executeQuery(querySelect, (result) => {
+    result.forEach((row) => {
+      console.log(row);
+    });
   });
-});
+}
 
-// insertCliente(queryInsert, (result) => {
-//   console.log("Cliente adicionado");
-// });
+function addQuery() {
+  executeQuery(queryInsert, (result) => {
+    return console.log("Cliente adicionado");
+  });
+}
+
+function deleteQuery() {
+  executeQuery(queryDelete, (result) => {
+    return console.log("Cliente(s) removido(s)");
+  });
+}
+
+//Exportar uma função sem retorno:
+module.exports = {
+  listQuery: listQuery,
+  addQuery: addQuery,
+  deleteQuery: deleteQuery,
+};

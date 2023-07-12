@@ -1,4 +1,4 @@
-module.exports = novoCliente = {
+module.exports = Cliente = {
   content: {
     nome: "Novo Cliente",
     email: "novo@cliente.com",
