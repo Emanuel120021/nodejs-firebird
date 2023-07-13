@@ -6,15 +6,24 @@ module.exports = executeQuery;
 
 function executeQuery(query, callback) {
   Firebird.attach(options, function (err, db) {
-    if (err) throw err;
+    if (err) {
+      console.error("1. Erro ao conectar ao banco de dados:", err);
+      return;
+    }
 
     db.query(query, (err, result) => {
-      if (err) throw err;
+      if (err) {
+        console.error("2. Erro ao conectar ao banco de dados:", err);
+        return;
+      }
 
       callback(result);
 
       db.detach(function (err) {
-        if (err) throw err;
+        if (err) {
+          console.error("Erro ao desconectar do banco de dados:", err);
+          return;
+        }
       });
     });
   });

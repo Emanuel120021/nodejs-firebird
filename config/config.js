@@ -1,11 +1,3 @@
-// const options = {
-//   host: "127.0.0.1",
-//   port: 3050,
-//   database: "C:/AR/BANCO/KAKASCAPP_ZN.FDB",
-//   user: "SYSDBA",
-//   password: "masterkey",
-// };
-
 const options = {
   host: "127.0.0.1",
   port: 3050,
