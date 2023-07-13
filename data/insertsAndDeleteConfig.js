@@ -15,7 +15,7 @@ module.exports = campoValorAdicionar = {
 };
 
 module.exports = campoCondicaoDelete = {
-  condicaoDelete: "ID < 8", // Condição para delete
+  condicaoDelete: "", // Condição para delete
   tabelaDelete: "clientes",
 };
 

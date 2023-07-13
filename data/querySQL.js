@@ -1,4 +1,4 @@
-const inserts = require("./insertsConfig.js");
+const inserts = require("./insertsAndDeleteConfig.js");
 
 const querySelect = "SELECT * FROM clientes ROWS 1";
 
