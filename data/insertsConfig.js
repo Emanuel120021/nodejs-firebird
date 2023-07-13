@@ -1,10 +1,12 @@
-module.exports = Cliente = {
-  content: {
-    nome: "Novo Cliente",
-    email: "novo@cliente.com",
+module.exports = campoValorAdicionar = {
+  values: {
+    nome: "Emanuel",
+    email: "emanuel.lazaro.52@gmail.com",
     telefone: "123456789",
   },
-  values: {
+
+  // Só alterar o valor abaixo abaixo se houver alguma alteração de campo na tabela
+  campo: {
     nome: "nome",
     email: "email",
     telefone: "telefone",
@@ -12,10 +14,13 @@ module.exports = Cliente = {
   tabela: "clientes",
 };
 
-module.exports = campoValor = {
+module.exports = campoCondicaoDelete = {
+  condicaoDelete: "ID < 8", // Condição para delete
+  tabelaDelete: "clientes",
+};
+
+module.exports = campoValorUpdate = {
   campo: "nome", // Nome do campo a ser alterado
   valor: "novo Nome", // Novo valor inserido no campo
   condicaoUpdate: "ID = 1", // Condição para alteração
-  condicaoDelete: "ID = 2", // Condição para delete
-  tabela: "clientes",
 };

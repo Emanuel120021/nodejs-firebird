@@ -2,19 +2,20 @@ const inserts = require("./insertsConfig.js");
 
 const querySelect = "SELECT * FROM clientes ROWS 1";
 
-const queryInsert = `INSERT INTO  ${Cliente.tabela} (${Cliente.values.nome}, 
-                                    ${Cliente.values.email}, 
-                                    ${Cliente.values.telefone}) 
+const queryInsert = `INSERT INTO  ${campoValorAdicionar.tabela} (${campoValorAdicionar.campo.nome}, 
+                                    ${campoValorAdicionar.campo.email}, 
+                                    ${campoValorAdicionar.campo.telefone}) 
 
-                            VALUES ('${Cliente.content.nome}', 
-                                    '${Cliente.content.email}', 
-                                    '${Cliente.content.telefone}')`;
+                            VALUES ('${campoValorAdicionar.values.nome}', 
+                                    '${campoValorAdicionar.values.email}', 
+                                    '${campoValorAdicionar.values.telefone}')`;
 
-const queryDelete = `DELETE FROM ${Cliente.tabela} WHERE ${campoValor.condicaoDelete}`;
+const queryDelete = `DELETE FROM ${campoCondicaoDelete.tabelaDelete} 
+                            WHERE ${campoCondicaoDelete.condicaoDelete}`;
 
-const queryUpdate = `UPDATE ${campoValor.tabela}
-                    SET  ${campoValor.campo} = '${campoValor.valor}'
-                    WHERE ${campoValor.condicaoUpdate}`;
+const queryUpdate = `UPDATE ${campoValorUpdate.tabela}
+                    SET  ${campoValorUpdate.campo} = '${campoValorUpdate.valor}'
+                    WHERE ${campoValorUpdate.condicaoUpdate}`;
 
 const queryRestartGen = `ALTER SEQUENCE GEN_CLIENTES_ID RESTART WITH 0`;
 
